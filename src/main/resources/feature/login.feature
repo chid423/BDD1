@@ -1,4 +1,3 @@
-
 Feature: login
   I want to use this template for my feature file
 
@@ -10,14 +9,7 @@ Feature: login
     Then user clicks on login button
     And user see homepage
 
-Scenario: User logs in as locked out user
+  Scenario: User logs in as locked out user
+    Given user logs in as locked user
 
-   Given user logs in as locked user
-   
-   
-   Scenario: User Logs in as a problem  user
-   
-    
-   
-   
-  
+  Scenario: User Logs in as a problem  user
