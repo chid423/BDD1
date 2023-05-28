@@ -17,4 +17,11 @@ Feature: Login2
     Then page title should be "Your store. Login"
     And close browser
 
+  @tag
+  Scenario: Verifying the WebTable 
+  Given User navigate to url "https://admin-demo.nopcommerce.com/Admin/CustomerRole/List"
+ 
+  And User click on Customers
+  And User click on Customers role  
+  
   

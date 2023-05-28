@@ -15,15 +15,17 @@ import pages.Logout_Page;
 
 public class Long_Test2 {
 
+	
 	public WebDriver driver;
 	public Login_pages2  login2;
-	public Logout_Page logout;
+	
 	@Given("User launch chrome browser")
 	public void user_launch_chrome_browser() {
 	    WebDriverManager .chromedriver().setup();
-	    driver = new ChromeDriver();
+	    
+	  this. driver = new ChromeDriver();
 	    login2 = new Login_pages2(driver);
-	    logout = new Logout_Page(driver);
+	   
 	}
 
 	@When("User open Url{string}")
@@ -45,7 +47,6 @@ public class Long_Test2 {
 	login2.clickOnLogin();
 	
 }
-	
 	
 	
 	@Then("Page Title should be {string}")
@@ -84,15 +85,16 @@ public class Long_Test2 {
 	
 	
 	
+	
 	@Then("page title should be {string}")
-	public void page_title_should_be(String string) {
+	public void page_title_should_be(String backToPage) {
 	   if(driver.getPageSource().contains("Dashboard"))
 	   {
 		   Assert.assertTrue(true);
 	   }
 	   
 	   else {
-		   Assert.assertTrue(false);
+		   Assert.assertEquals(backToPage,driver.getTitle());
 	   }
 	}
 	
@@ -108,34 +110,12 @@ public class Long_Test2 {
 	
 
 	@Then("close browser")
-	public void close_browser() {
+	public void close_browser() throws InterruptedException {
 	   
 		driver.quit();
+		Thread.sleep(3000);
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
